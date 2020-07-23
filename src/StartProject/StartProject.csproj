@@ -96,6 +96,12 @@
     <Reference Include="Moryx.Resources.Management, Version=5.0.0.21, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Moryx.Resources.Management.5.0.0-dev.21\lib\net461\Moryx.Resources.Management.dll</HintPath>
     </Reference>
+    <Reference Include="Moryx.Products.Management, Version=5.0.0.21, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moryx.Products.Management.5.0.0-dev.21\lib\net461\Moryx.Products.Management.dll</HintPath>
+    </Reference>
+    <Reference Include="Moryx.Products.Model, Version=5.0.0.21, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Moryx.Products.Model.5.0.0-dev.21\lib\net461\Moryx.Products.Model.dll</HintPath>
+    </Reference>
     <Reference Include="Moryx.Runtime, Version=3.0.0.37, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Moryx.Runtime.3.0.0-dev.37\lib\netstandard2.0\Moryx.Runtime.dll</HintPath>
     </Reference>
