@@ -1,9 +1,9 @@
 ﻿using System;
+using FarMory.CropManagement.Components;
+using FarMory.Facade;
 using Moryx.Runtime.Modules;
-using MyApplication.Facade;
-using MyApplication.Module.Components;
 
-namespace MyApplication.Module.Facade
+namespace FarMory.CropManagement.Facade
 {
     public class MyFacade : IFacadeControl, IMyFacade
     {

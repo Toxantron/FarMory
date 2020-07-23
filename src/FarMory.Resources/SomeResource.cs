@@ -1,7 +1,8 @@
 ﻿using System.ComponentModel;
 using System.Runtime.Serialization;
+using FarMory.Capabilities;
+using FarMory.Resources;
 using Moryx.AbstractionLayer.Resources;
-using MyApplication.Capabilities;
 
 namespace MyApplication.Resources.MyResource
 {

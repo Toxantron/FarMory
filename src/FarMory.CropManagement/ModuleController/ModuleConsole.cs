@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using Moryx.Runtime.Modules;
 
-namespace MyApplication.Module.ModuleController
+namespace FarMory.CropManagement.ModuleController
 {
     [ServerModuleConsole]
     public class ModuleConsole : IServerModuleConsole

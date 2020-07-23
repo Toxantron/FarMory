@@ -1,11 +1,11 @@
-﻿using Moryx.Runtime.Container;
+﻿using FarMory.CropManagement.Components;
+using FarMory.CropManagement.Facade;
+using FarMory.Facade;
+using FarMory.Plugins;
+using Moryx.Runtime.Container;
 using Moryx.Runtime.Modules;
-using MyApplication.Facade;
-using MyApplication.Module.Components;
-using MyApplication.Module.Facade;
-using MyApplication.Plugins;
 
-namespace MyApplication.Module.ModuleController
+namespace FarMory.CropManagement.ModuleController
 {
     [ServerModule(ModuleName)]
     //public class ModuleController : ServerModuleBase<ModuleConfig> // No facade export

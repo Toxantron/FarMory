@@ -1,4 +1,4 @@
-﻿namespace MyApplication.Facade
+﻿namespace FarMory.Facade
 {
     public interface IMyFacade
     {

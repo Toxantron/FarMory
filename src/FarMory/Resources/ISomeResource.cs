@@ -1,6 +1,6 @@
 ﻿using Moryx.AbstractionLayer.Resources;
 
-namespace MyApplication.Resources
+namespace FarMory.Resources
 {
     public interface ISomeResource : IPublicResource
     {

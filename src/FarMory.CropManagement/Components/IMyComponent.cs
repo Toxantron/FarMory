@@ -1,6 +1,6 @@
 ﻿using Moryx.Modules;
 
-namespace MyApplication.Module.Components
+namespace FarMory.CropManagement.Components
 {
     public interface IMyComponent : IPlugin
     {

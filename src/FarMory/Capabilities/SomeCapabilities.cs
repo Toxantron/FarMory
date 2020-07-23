@@ -1,6 +1,6 @@
 ﻿using Moryx.AbstractionLayer.Capabilities;
 
-namespace MyApplication.Capabilities
+namespace FarMory.Capabilities
 {
     public class SomeCapabilities : ConcreteCapabilities
     {
