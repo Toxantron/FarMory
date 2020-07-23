@@ -18,6 +18,21 @@ The modules entry class *ModuleController* is prepared for usage with or without
 
 You can interact with the module through console or *MaintenanceWeb*. To invoke the `SayHello`-method you can type "exec MyModule hello Name" or "enter MyModule" followed by "hello Name". To remove the scoped mode type "bye".
 
+### Resources Quick Start
+
+The *ResourceManager* will fail upon start as it requires a database. First make sure you have [PostgreSQL installed](https://www.postgresql.org/download/), then start the application and open [Database configuration](http://localhost/maintenanceweb/#/databases). Configure the *Moryx.Resources.Model* and create the database. Afterwards restart the failed module, which should now be running with a notification because of the empty database.
+
+The next step is to add an instance of *ResourceInteraction* to use the Resource UI for adding and configuring resources. The *ResourceManager* is pre-configured with an initializer, that creates the interaction endpoint. After the application started and the *ResourceManager* is running, enter the following commands into the console:
+
+```sh
+exec ResourceManager initialize 1
+reinc ResourceManager
+```
+
+Once the module is running, start the front-end and you can create and configure resources. You can also add additional resource types by installing their packages in the *StartProject*.
+
+To access resources outside the *ResourceManager*, import the `IResourceManagement` facade in your module and register it in the container.
+
 ## Branches
 
 The *master* branch of this template is the bare minimum most developers will need to start, whether the build an application, a reusable module or a plugin to extend an existing module. There is a range of specialized branches for different use cases and tasks. Some branches include small class stubs, which you can either delete or adjust to your use case. You can start from a branch or merge it into *master*. With the merging technique you can also combine multiple templates by merging their branches into `master`. Below is a list of branches and their content:
