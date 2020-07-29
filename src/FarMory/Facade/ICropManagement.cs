@@ -1,6 +1,6 @@
 ﻿namespace FarMory.Facade
 {
-    public interface IMyFacade
+    public interface ICropManagement
     {
     }
 }

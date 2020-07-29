@@ -2,26 +2,25 @@
 using FarMory.CropManagement.Facade;
 using FarMory.Facade;
 using FarMory.Plugins;
+using Moryx.AbstractionLayer.Products;
+using Moryx.AbstractionLayer.Resources;
 using Moryx.Runtime.Container;
 using Moryx.Runtime.Modules;
 
 namespace FarMory.CropManagement.ModuleController
 {
     [ServerModule(ModuleName)]
-    //public class ModuleController : ServerModuleBase<ModuleConfig> // No facade export
-    public class ModuleController : ServerModuleFacadeControllerBase<ModuleConfig>, IFacadeContainer<IMyFacade> // Facade export
+    public class ModuleController : ServerModuleFacadeControllerBase<ModuleConfig>, IFacadeContainer<ICropManagement>
     {
-        internal const string ModuleName = "MyModule";
+        internal const string ModuleName = "CropManager";
 
         public override string Name => ModuleName;
 
-        // Import a data model
-        //[Named(SomeConstants.Namespace)]
-        //public IUnitOfWorkFactory MyModel { get; set; }
+        [RequiredModuleApi(IsStartDependency = true, IsOptional = false)]
+        public IResourceManagement ResourceManagement { get; set; }
 
-        // Import a facade, e.g. IResourceManagement
-        //[RequiredModuleApi(IsStartDependency = true, IsOptional = false)]
-        //public IOtherFacade Dependency { get; set; }
+        [RequiredModuleApi(IsStartDependency = true, IsOptional = false)]
+        public IProductManagement ProductManagement { get; set; }
 
         #region State transition
 
@@ -30,11 +29,10 @@ namespace FarMory.CropManagement.ModuleController
         /// </summary>
         protected override void OnInitialize()
         {
-            // Register model
-            //Container.SetInstance(MyModel);
-
-            // Register required facade
-            //Container.SetInstance(Dependency);
+            // Register required facades
+            Container
+                .SetInstance(ResourceManagement)
+                .SetInstance(ProductManagement);
             
             // Load plugins
             Container.LoadComponents<IMyModulesPlugin>();
@@ -46,9 +44,9 @@ namespace FarMory.CropManagement.ModuleController
         protected override void OnStart()
         {
             // Start component
-            Container.Resolve<IMyComponent>().Start();
+            Container.Resolve<IGardenPlanner>().Start();
 
-            ActivateFacade(_myFacade);
+            ActivateFacade(_cropManagement);
         }
 
         /// <summary>
@@ -56,18 +54,18 @@ namespace FarMory.CropManagement.ModuleController
         /// </summary>
         protected override void OnStop()
         {
-            // Tear down facades
-            DeactivateFacade(_myFacade);
+            DeactivateFacade(_cropManagement);
 
-            Container.Resolve<IMyComponent>().Stop();
+            Container.Resolve<IGardenPlanner>().Stop();
         }
 
         #endregion
 
         #region FacadeContainer
 
-        private readonly MyFacade _myFacade = new MyFacade();
-        IMyFacade IFacadeContainer<IMyFacade>.Facade => _myFacade;
+
+        private readonly CropManagementFacade _cropManagement = new CropManagementFacade();
+        ICropManagement IFacadeContainer<ICropManagement>.Facade => _cropManagement;
 
         #endregion
     }

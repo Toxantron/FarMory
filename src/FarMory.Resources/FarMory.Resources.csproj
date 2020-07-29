@@ -55,9 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyResource.cs" />
+    <Compile Include="GardenBedResource.cs" />
+    <Compile Include="PlantingPotResource.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SomeResource.cs" />
+    <Compile Include="GreenHouseResource.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

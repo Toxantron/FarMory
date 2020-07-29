@@ -3,8 +3,8 @@ using Moryx.Container;
 
 namespace FarMory.CropManagement.Implementation
 {
-    [Component(LifeCycle.Singleton, typeof(IMyComponent))]
-    public class Component : IMyComponent
+    [Component(LifeCycle.Singleton, typeof(IGardenPlanner))]
+    public class GardenPlanner : IGardenPlanner
     {
         public void Start()
         {

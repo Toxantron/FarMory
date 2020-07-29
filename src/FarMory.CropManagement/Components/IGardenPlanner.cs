@@ -2,7 +2,7 @@
 
 namespace FarMory.CropManagement.Components
 {
-    public interface IMyComponent : IPlugin
+    public interface IGardenPlanner : IPlugin
     {
     }
 }

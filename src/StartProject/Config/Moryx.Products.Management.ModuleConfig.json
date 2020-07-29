@@ -1,0 +1,66 @@
+{
+  "InteractionHost": {
+    "Endpoint": "ProductInteraction",
+    "BindingType": "BasicHttp",
+    "RequiresAuthentification": false,
+    "MetadataEnabled": true,
+    "HelpEnabled": true
+  },
+  "Importers": [
+    {
+      "$type": "Moryx.Products.Management.Importers.DefaultImporterConfig, Moryx.Products.Management",
+      "PluginName": "DefaultImporter"
+    }
+  ],
+  "TypeStrategies": [
+    {
+      "$type": "Moryx.Products.Management.GenericTypeConfiguration, Moryx.Products.Management",
+      "PluginName": "GenericTypeStrategy",
+      "JsonColumn": "Text8",
+      "PropertyConfigs": [
+        {
+          "PropertyName": "IndoorSowing",
+          "PluginName": "IntegerColumnMapper",
+          "Column": "Integer1"
+        },
+        {
+          "PropertyName": "OutdoorSowing",
+          "PluginName": "IntegerColumnMapper",
+          "Column": "Integer2"
+        },
+        {
+          "PropertyName": "LastSowing",
+          "PluginName": "IntegerColumnMapper",
+          "Column": "Integer3"
+        },
+        {
+          "PropertyName": "InRowSpacing",
+          "PluginName": "IntegerColumnMapper",
+          "Column": "Integer4"
+        },
+        {
+          "PropertyName": "BetweenRowsSpacing",
+          "PluginName": "IntegerColumnMapper",
+          "Column": "Integer5"
+        },
+        {
+          "PropertyName": "Lifespan",
+          "PluginName": "IntegerColumnMapper",
+          "Column": "Integer6"
+        }
+      ],
+      "TargetType": "CropType"
+    },
+    {
+      "$type": "Moryx.Products.Management.GenericTypeConfiguration, Moryx.Products.Management",
+      "PluginName": "GenericTypeStrategy",
+      "JsonColumn": "Text8",
+      "PropertyConfigs": [],
+      "TargetType": "AnimalType"
+    }
+  ],
+  "InstanceStrategies": [],
+  "LinkStrategies": [],
+  "RecipeStrategies": [],
+  "ConfigState": "Generated"
+}

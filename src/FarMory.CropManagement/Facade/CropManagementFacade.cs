@@ -5,9 +5,9 @@ using Moryx.Runtime.Modules;
 
 namespace FarMory.CropManagement.Facade
 {
-    public class MyFacade : IFacadeControl, IMyFacade
+    public class CropManagementFacade : IFacadeControl, ICropManagement
     {
-        public IMyComponent Component { get; set; }
+        public IGardenPlanner Component { get; set; }
 
         public void Activate()
         {

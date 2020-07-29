@@ -54,11 +54,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Facade\IMyFacade.cs" />
+    <Compile Include="AvailableMonthsAttribute.cs" />
+    <Compile Include="CropLifespan.cs" />
+    <Compile Include="Facade\ICropManagement.cs" />
     <Compile Include="Plugins\IMyModulesPlugin.cs" />
-    <Compile Include="Capabilities\SomeCapabilities.cs" />
+    <Compile Include="Capabilities\GrowingCapabilities.cs" />
+    <Compile Include="Products\AnimalInstance.cs" />
+    <Compile Include="Products\AnimalType.cs" />
+    <Compile Include="Products\CropInstance.cs" />
+    <Compile Include="Products\CropType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Resources\ISomeResource.cs" />
+    <Compile Include="Resources\IGrowingSpace.cs" />
+    <Compile Include="SunExposure.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
